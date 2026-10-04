@@ -209,6 +209,7 @@ Firstmate's skills live in two separate places with different audiences:
   Each one is a self-contained skill with no dependency on firstmate's paths, tools, or vocabulary.
   Today that is `skills/stow`, a generic session-knowledge-sweep skill that routes findings by explicit instruction first, then existing local conventions, then a private `.stow-notes.md` fallback, and curates tiered entries through decay, local archival, and user-approved on-demand offload proposals.
   It intentionally shares no code with the firstmate-internal `.agents/skills/stow` it is named after, so the two can evolve independently.
+  `skills/mattpocock` is a vendored copy of [Matt Pocock's skills](https://github.com/mattpocock/skills) under their MIT license; [its README](skills/mattpocock/README.md) records the upstream release and how to update it.
 
 ## Documentation
 
