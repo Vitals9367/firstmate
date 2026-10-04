@@ -1119,7 +1119,8 @@ test_worker_role_scope() {
 
 # A home can carry standing worker instructions in its gitignored
 # config/brief-include.md. The include must land last on ship and scout
-# scaffolds, stay out of charters, change nothing when absent or blank, and stop
+# scaffolds, stay out of charters, fall back to the tracked default when absent,
+# let a blank file opt out of that default, and stop
 # the scaffold before anything is written when the path is unusable.
 test_home_brief_include_is_appended_last() {
   local home config brief kind out rc last_heading task_count
@@ -1128,7 +1129,8 @@ test_home_brief_include_is_appended_last() {
   mkdir -p "$config"
 
   FM_HOME="$home" "$ROOT/bin/fm-brief.sh" include-absent some-proj --scout >/dev/null || fail "scout scaffold failed without an include"
-  assert_no_grep '# Home brief additions' "$home/data/include-absent/brief.md" "an absent include still added a section"
+  assert_grep '# Home brief additions' "$home/data/include-absent/brief.md" "an absent home include did not fall back to the tracked default"
+  assert_grep '## Coding guidelines' "$home/data/include-absent/brief.md" "the tracked default include was not appended"
   printf ' \n\n' > "$config/brief-include.md"
   FM_HOME="$home" "$ROOT/bin/fm-brief.sh" include-blank some-proj --scout >/dev/null || fail "scout scaffold failed with a blank include"
   assert_no_grep '# Home brief additions' "$home/data/include-blank/brief.md" "a blank include still added a section"
@@ -1165,7 +1167,7 @@ test_home_brief_include_is_appended_last() {
 
   FM_HOME="$home" FM_CONFIG_OVERRIDE="$TMP_ROOT/include-empty-config" \
     "$ROOT/bin/fm-brief.sh" include-override some-proj --scout >/dev/null || fail "scout scaffold failed under FM_CONFIG_OVERRIDE"
-  assert_no_grep '# Home brief additions' "$home/data/include-override/brief.md" "FM_CONFIG_OVERRIDE did not select the config directory"
+  assert_no_grep 'Prefer small commits.' "$home/data/include-override/brief.md" "FM_CONFIG_OVERRIDE did not select the config directory"
 
   rm -f "$config/brief-include.md"
   mkdir "$config/brief-include.md"
