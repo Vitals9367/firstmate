@@ -111,8 +111,10 @@
 # A home may carry standing worker instructions without editing this tracked
 # script: when config/brief-include.md exists under the active home, ship and
 # scout scaffolds append its text verbatim as their last section, "# Home brief
-# additions", which defers to every other section of the brief. It goes last
-# because the machine-read `# Task` heading resolves to its first match, so
+# additions", which defers to every other section of the brief. When the home
+# has no such file, the tracked default .agents/brief-include.md in the code
+# root is used instead; a blank home file opts the home out of that default.
+# It goes last because the machine-read `# Task` heading resolves to its first match, so
 # appended text can never shadow it; a later scout promotion appends its ship
 # contract below it, which that position-free deference already covers. An
 # absent or blank file changes nothing; a present path that is not a readable
@@ -301,6 +303,9 @@ fi
 # The optional home-local include is read before anything is written, so an
 # unusable file never leaves a partial scaffold behind.
 BRIEF_INCLUDE_FILE="$CONFIG/brief-include.md"
+if [ ! -e "$BRIEF_INCLUDE_FILE" ] && [ ! -L "$BRIEF_INCLUDE_FILE" ]; then
+  BRIEF_INCLUDE_FILE="$SCRIPT_DIR/../.agents/brief-include.md"
+fi
 BRIEF_INCLUDE_BODY=
 if [ "$KIND" != secondmate ] && { [ -e "$BRIEF_INCLUDE_FILE" ] || [ -L "$BRIEF_INCLUDE_FILE" ]; }; then
   { [ -f "$BRIEF_INCLUDE_FILE" ] && BRIEF_INCLUDE_BODY=$(cat "$BRIEF_INCLUDE_FILE" 2>/dev/null); } || {
