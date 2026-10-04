@@ -135,7 +135,41 @@ MD
   pass "local links resolve while dates, versions, commands, and incident prose remain semantically reviewed"
 }
 
+test_links_inside_code_are_examples() {
+  local repo="$TMP_ROOT/code-fixture"
+  mkdir -p "$repo/docs"
+  git -C "$repo" init -q
+  cat > "$repo/README.md" <<'MD'
+[Setup](docs/setup.md) [Policy](docs/policy.md)
+
+Write a pointer such as `see [Guide](./src/guide.md)` in the project.
+
+````md
+- [Example](./src/example.md)
+```
+- [Nested](./src/nested.md)
+````
+
+~~~
+[Tilde](./src/tilde.md)
+~~~
+MD
+  printf '%s\n' '# Setup' > "$repo/docs/setup.md"
+  printf '%s\n' '# Policy' > "$repo/docs/policy.md"
+  printf '%s\n' '# Evidence' > "$repo/docs/evidence.md"
+  write_fixture_inventory "$repo"
+  git -C "$repo" add README.md docs
+  "$CHECK" --root "$repo" >/dev/null \
+    || fail "checker resolved example links inside code spans or fenced blocks"
+
+  printf '%s\n' '[After code](./src/missing.md)' >> "$repo/README.md"
+  git -C "$repo" add README.md
+  run_expect_failure "unresolved local link" "$CHECK" --root "$repo"
+  pass "links inside code are examples while links after a closed fence still resolve"
+}
+
 test_repository_inventory_passes
 test_duplicate_and_setup_classification_fail
 test_required_pointer_fails
 test_local_links_and_no_keyword_heuristic
+test_links_inside_code_are_examples
