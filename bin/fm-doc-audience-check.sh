@@ -26,6 +26,8 @@ from urllib.parse import unquote, urlsplit
 
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 HTML_LINK_RE = re.compile(r"\b(?:href|src)=[\"']([^\"']+)[\"']", re.IGNORECASE)
+FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,})")
+INLINE_CODE_RE = re.compile(r"(`+)(?:(?!\1).)+?\1")
 REQUIRED_TRACKED_PATTERNS = ["*.md", "*.mdx", "*.rst", "*.txt", "docs/examples/*"]
 
 
@@ -96,11 +98,29 @@ def resolve_local_target(root: Path, source: Path, raw: str) -> Path | None:
     return target
 
 
+def remove_markdown_code(text: str) -> str:
+    """Drop fenced blocks and inline code spans, whose link syntax is example text."""
+    kept: list[str] = []
+    open_fence = ""
+    for line in text.splitlines():
+        match = FENCE_RE.match(line)
+        if open_fence:
+            if match and match.group(1)[0] == open_fence[0] and len(match.group(1)) >= len(open_fence):
+                open_fence = ""
+            continue
+        if match:
+            open_fence = match.group(1)
+            continue
+        kept.append(INLINE_CODE_RE.sub("", line))
+    return "\n".join(kept)
+
+
 def markdown_local_links(root: Path, source: Path) -> list[tuple[str, Path]]:
     try:
         text = source.read_text(encoding="utf-8")
     except (OSError, UnicodeDecodeError) as exc:
         fail(f"cannot read prose surface {source.relative_to(root)}: {exc}")
+    text = remove_markdown_code(text)
     raw_links = MARKDOWN_LINK_RE.findall(text) + HTML_LINK_RE.findall(text)
     result: list[tuple[str, Path]] = []
     for raw in raw_links:

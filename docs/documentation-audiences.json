@@ -541,6 +541,266 @@
       "audience": "operator-current"
     },
     {
+      "path": "skills/mattpocock/README.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/README.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/ask-matt/PHASE-BOUNDARIES.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/ask-matt/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/code-review/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/codebase-design/DEEPENING.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/codebase-design/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/diagnosing-bugs/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/domain-modeling/ADR-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/domain-modeling/GLOSSARY-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/domain-modeling/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/grill-with-docs/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/implement-spec/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/implement/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/improve-codebase-architecture/HTML-REPORT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/improve-codebase-architecture/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/pr/CREDITS.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/pr/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/prototype/LOGIC.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/prototype/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/prototype/UI.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/research/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/retro/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/domain.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/tdd/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/tdd/mocking.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/tdd/tests.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/to-spec/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/to-tickets/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/triage/AGENT-BRIEF.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/triage/OUT-OF-SCOPE.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/triage/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/wayfinder/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/engineering/wizard/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/README.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/claude-handoff/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/loop-me/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/setup-ts-deep-modules/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/writing-beats/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/writing-fragments/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/in-progress/writing-shape/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/misc/README.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/misc/git-guardrails-claude-code/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/misc/migrate-to-shoehorn/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/misc/scaffold-exercises/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/misc/setup-pre-commit/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/README.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/grill-me/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/grilling/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/handoff/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/teach/GLOSSARY-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/teach/LEARNING-RECORD-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/teach/MISSION-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/teach/RESOURCES-FORMAT.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/teach/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/to-questionnaire/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/wait-what/SKILL.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "audience": "public-product"
+    },
+    {
+      "path": "skills/mattpocock/productivity/writing-for-agents/SKILL.md",
+      "audience": "public-product"
+    },
+    {
       "path": "skills/stow/SKILL.md",
       "audience": "public-product"
     },
